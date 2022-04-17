@@ -11,11 +11,6 @@ class Pagina extends Component{
         UID: "",
         email: ""
       }
-          
-      //this.ChangeEmail  = this.handleChangeEmail.bind(this);
-      //this.ChangeSenha  = this.handleChangeSenha.bind(this);
-
-      this.mostrarDados =  this.mostrarDados.bind(this);
 
       firebase.auth().onAuthStateChanged((user) => {
         if(user){
@@ -25,19 +20,13 @@ class Pagina extends Component{
             email: user.email
           })
 
-          this.state.email = user.email
-          this.mostrarDados(user)
+          
         }else{
           console.log('não encontrei');
 
         }
       })      
     }
-  
-    mostrarDados(user){
-      this.state.email = user.email
-      console.log(this.state.email)
-    }  
 
     render(){
       return (
