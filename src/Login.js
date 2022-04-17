@@ -15,10 +15,10 @@ class Pagina extends Component{
     }
     
   login(){
-      console.log(this.state.email,this.state.senha);
+      
       const auth = firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.senha)
       .then((userCredential) => {
-        console.log ('teste');
+        console.log (auth);
       //  const user = userCredential.user;
         window.location.href= '/principal'
       })
